@@ -646,8 +646,8 @@ class SSDVGG:
                                         axis=-1, name='result')
 
     #---------------------------------------------------------------------------
-    def build_optimizer(self, learning_rate=0.0001, weight_decay=0.995,
-                        momentum=0.009, global_step=None):
+    def build_optimizer(self, learning_rate=0.00001, weight_decay=1e-6,
+                        momentum=0.9, global_step=None):
 
         self.labels = tf.placeholder(tf.float32, name='labels',
                                     shape=[None, None, self.num_vars])
@@ -878,7 +878,7 @@ class SSDVGG:
         #-----------------------------------------------------------------------
         self.optimizer = optimizer
         self.losses = {
-            'total': self.Total_loss,
+            'total': self.loss,
             'localization': self.localization_loss,
             'confidence': self.confidence_loss,
             'l2': self.l2_loss,

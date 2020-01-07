@@ -130,7 +130,6 @@ class ResizeTransform(Transform):
     Parameters: width, height, algorithms
     """
     def __call__(self, data, label, gt, seg_gt_onehot, seg_gt_to_compare ):
-        #alg = random.choice(self.algorithms)
         resized = cv2.resize(data, (self.width, self.height), interpolation=cv2.INTER_NEAREST)
         seg_gt_onehot = cv2.resize(seg_gt_onehot,(self.width, self.height), interpolation=cv2.INTER_NEAREST)
         seg_gt_to_compare = cv2.resize(seg_gt_to_compare, (self.width, self.height), interpolation=cv2.INTER_NEAREST)

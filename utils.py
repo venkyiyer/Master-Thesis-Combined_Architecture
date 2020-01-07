@@ -429,7 +429,7 @@ class LossSummary:
         self.session = session
         self.writer = writer
         self.num_samples = num_samples
-        self.loss_names = ['total', 'localization', 'confidence', 'l2','segmentation'] #'localization', 'confidence', 'l2','segmentation'
+        self.loss_names = ['total', 'localization', 'confidence', 'l2', 'segmentation'] #'localization', 'confidence', 'l2','segmentation',
         self.loss_values = {}
         self.placeholders = {}
 
