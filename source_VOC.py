@@ -204,8 +204,8 @@ class KittiSource:
         valid_samples =[]
         for voc_id in ['VOC/']:
             root = voc_id
-            annot = self._build_annotation_list(root,'train_') # Exp_train  training_2330
-            annot_valid = self._build_annotation_val_list(root, 'val_') # Exp_valid
+            annot = self._build_annotation_list(root,'Exp_train') # Exp_train  training_2330
+            annot_valid = self._build_annotation_val_list(root, 'Exp_valid') # Exp_valid
             train_annot += annot
             valid_annot += annot_valid
             train_samples += self._build_sample_list(root, annot)
@@ -291,7 +291,7 @@ class KittiSource:
         :param data_dir: the directory where the dataset's file are stored
         """
         root = data_dir + '/'
-        annot_test = self.__build_annotation_test_list(root, 'test_') # Exp_testing
+        annot_test = self.__build_annotation_test_list(root, 'Exp_testing') # Exp_testing
         self.test_samples  = self.__build_sample_test_list(root, annot_test)
 
         if len(self.test_samples) == 0:
